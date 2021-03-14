@@ -1,0 +1,13 @@
+{
+	"channels": {"t": "number", "int": true, "min": 8, "max": 255},
+	"downSounds": {"t": "array", "rule": {"t": "string"}},
+	"upSounds": {"t": "array", "rule": {"t": "string"}},
+	"events": {"t": "array", "rule": {"t": "object", "rules": {
+		"keyName": {"t": "string"},
+		"downSounds": {"t": "array", "rule": {"t": "string"}},
+		"upSounds": {"t": "array", "rule": {"t": "string"}},
+		"panning": {"t": "number", "min": -1.0, "max": 1.0, "d": 0},
+		"repeat": {"t": "bool", "d": true}
+		}
+	}}
+}

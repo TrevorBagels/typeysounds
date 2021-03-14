@@ -1,0 +1,4 @@
+{
+	"preset": {"t":"string", "d": "Presets/1"},
+	"logMissingKeys": {"t": "bool", "d": false}
+}

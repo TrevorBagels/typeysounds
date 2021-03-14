@@ -1,0 +1,48 @@
+{
+	"downSounds": ["press.mp3", "press2.mp3", "press3.mp3", "press4.mp3", "press5.mp3"],
+	"events": [
+		{
+			"keyName": "enter",
+			"downSounds": ["return-new.mp3", "return.mp3"],
+			"panning": 1,
+			"repeat": false
+		},
+		{
+			"keyName": "down",
+			"downSounds": ["scrollDown.mp3"],
+			"panning": 1,
+			"repeat": true
+		},
+		{
+			"keyName": "up",
+			"downSounds": ["scrollUp.mp3"],
+			"panning": 1,
+			"repeat": true
+		},
+		{
+			"keyName": "right",
+			"downSounds": ["scrollDown.mp3"],
+			"panning": 1,
+			"repeat": true
+		},
+		{
+			"keyName": "left",
+			"downSounds": ["scrollUp.mp3"],
+			"panning": 1,
+			"repeat": true
+		},
+		{
+			"keyName": "space",
+			"downSounds": ["space-new.mp3"],
+			"panning": 1,
+			"repeat": true
+		},
+		{
+			"keyName": "backspace",
+			"downSounds": ["backspace.mp3"],
+			"panning": 1,
+			"repeat": true
+		}
+	]
+
+}
