@@ -61,8 +61,7 @@ class Main:
 		for line in balancemap.split("\n"):
 			for c,i in zip(line, range(len(line))):
 				if c != " ":
-					self.balanceMap[c] = (i - 15/2)/(15/2)
-		print(self.balanceMap)
+					self.balanceMap[c] = {"b":(i - 15/2)/(15/2), "o":False}
 		self.main_loop()
 
 	def main_loop(self):
@@ -74,12 +73,20 @@ class Main:
 		return self.config['preset'] + "/" + str(file)
 	
 	def _on_key(self, key, direction="down"):
-		if type(key) == pynput.keyboard.KeyCode and len(self.preset[direction + "Sounds"]) > 0:
+		if type(key) == pynput.keyboard.KeyCode:
 			balance = 0
 			self.lastKey = key.char
-			try: balance = self.balanceMap[key.char]
+			try:
+				balance = self.balanceMap[key.char]['b']
+				onOff = self.balanceMap[key.char]['o']
+				if direction == 'down':
+					if self.balanceMap[key.char]['o'] == True: return
+					self.balanceMap[key.char]['o'] = True
+				elif direction == "up":
+					self.balanceMap[key.char]['o'] = False
 			except: print("oopsie woopsie", key.char)
-			self.sound.play_sound(self.get_sound_path(random.choice(self.preset[direction + "Sounds"])), balance=balance)
+			if len(self.preset[direction + "Sounds"]) > 0:
+				self.sound.play_sound(self.get_sound_path(random.choice(self.preset[direction + "Sounds"])), balance=balance)
 		elif type(key) == pynput.keyboard.Key:
 			if key._name_ not in self.events and "ALL" in self.events: key._name_ = "ALL"
 			if key._name_ in self.events and (self.events[key._name_]['repeat'] == False and self.lastKey == key._name_) == False:
@@ -90,8 +97,6 @@ class Main:
 			elif key._name_ not in self.events and self.config['logMissingKeys']:
 				print(key._name_)
 			self.lastKey = key._name_
-		
-
 
 	def on_key_down(self, key):
 		self._on_key(key)
@@ -117,3 +122,5 @@ def _test():
 	time.sleep(5)
 
 '''
+
+

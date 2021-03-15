@@ -28,13 +28,13 @@
 		{
 			"keyName": "left",
 			"downSounds": ["scrollUp.mp3"],
-			"panning": 1,
+			"panning": 0.98,
 			"repeat": true
 		},
 		{
 			"keyName": "space",
 			"downSounds": ["space-new.mp3"],
-			"panning": 1,
+			"panning": 0,
 			"repeat": true
 		},
 		{
@@ -42,7 +42,42 @@
 			"downSounds": ["backspace.mp3"],
 			"panning": 1,
 			"repeat": true
+		},
+		{
+			"keyName": "cmd",
+			"downSounds": ["backspace.mp3"],
+			"panning": -1,
+			"repeat": true
+		},
+		{
+			"keyName": "ctrl",
+			"downSounds": ["backspace.mp3"],
+			"panning": -1,
+			"repeat": true
+		},
+		{
+			"keyName": "alt",
+			"downSounds": ["backspace.mp3"],
+			"panning": -1,
+			"repeat": true
+		},
+		{
+			"keyName": "cmd_r",
+			"downSounds": ["backspace.mp3"],
+			"panning": 0.77,
+			"repeat": true
+		},
+		{
+			"keyName": "alt_r",
+			"downSounds": ["backspace.mp3"],
+			"panning": 0.89,
+			"repeat": true
+		},
+		{
+			"keyName": "shift",
+			"downSounds": ["backspace.mp3"],
+			"panning": -1,
+			"repeat": false
 		}
 	]
-
 }

@@ -1,3 +1,4 @@
 {
-	
+	"logMissingKeys": false,
+	"preset": "Presets/1"
 }
